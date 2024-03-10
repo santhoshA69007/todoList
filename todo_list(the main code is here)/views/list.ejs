@@ -1,0 +1,42 @@
+<%-include("header")-%>
+
+    <div class="box" id="heading">
+        <h1><%=kindOfDay%></h1>
+    </div>
+    <div class="box">
+
+    <% list.forEach(function(item){ %>
+        <form action="/delete/<%=kindOfDay%>" method="post">
+    <div class="item">
+     
+        <input type="checkbox" name="checkbox" value="<%=item._id%>" id="INPUT">
+            <p><%= item.task %></p>
+            <button type="submit" name="delete" value="">X</button>
+           
+            
+
+            
+
+        
+    </div>
+</form>
+
+    <% }); %>
+
+  
+    
+
+
+    
+   
+    <form action="/" method="post">
+   
+        <input type="text" name="input" id="INPUT" placeholder="New item" autocomplete="off">
+   <button type="submit" name="button" value="<%=kindOfDay%>">+</button>
+   <P><a href="/work">WORK_LIST</a></P>
+           <P><a href="/">WEEK_END</a></P>
+     
+</form>
+  </div>
+  <footer>copyright 2024 @santhoshA69007</footer>
+  <%-include("footer")-%>
