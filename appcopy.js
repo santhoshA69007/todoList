@@ -6,9 +6,11 @@ const app = express();
 // const uri="mongodb://localhost:27017/todoDBv3";
 const uri_pass = process.env.MONGODB_URI_PASS;
 const uri =process.env.MONGODB_URI
-console.log(uri_pass);
-const uri_enc = async function(){ await uri.replace("<password>",encodeURIComponent(uri_pass))}
+console.log(uri);
+const uri_enc =  uri.replace("<password>",encodeURIComponent(uri_pass))
+console.log(uri_enc);
 mongoose.connect(uri_enc);
+
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
